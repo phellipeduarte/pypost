@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <h1>{{ user.username }}</h1>
+        <h4>{{ user.bio }}</h4>
+        <small>Entrou em {{ user.date_join|date:"d/m/Y" }}</small>
+    {% endblock %}
