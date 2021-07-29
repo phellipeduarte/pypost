@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'posts.apps.PostsConfig',
 
     # 3rd party apps
 

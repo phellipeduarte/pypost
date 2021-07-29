@@ -3,5 +3,15 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    Olá!
+    {% for post in post_list %}
+        <article>
+            <h2 class="">
+                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            </h2>
+            <p class="date text-muted fs-itallic">
+                Publicado em {{ post.created }} por {{ post.author }}
+            </p>
+            {{ post.body|linebreaks|truncatewords:10 }}
+        </article>
+    {% endfor %}
 {% endblock %}

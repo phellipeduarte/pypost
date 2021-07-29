@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>{% block title %}{% endblock %}</title>
+    <title></title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand navbar-dark bg-secondary mb-3">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'pages:home' %}">PyPost</a>
+                <a class="navbar-brand" href="{% url 'posts:list' %}">PyPost</a>
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'posts:post_create' %}">Novo Post</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'pages:profile' %}">Perfil</a>
                     </li>
